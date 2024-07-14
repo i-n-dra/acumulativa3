@@ -8,12 +8,18 @@ export const PostItSimulator=() => {
     const descRef=useRef();
     const impRef=useRef();
     const [taskList, setTaskList]=useState([
-        {id: uuid(), title:'tarea 1', desc:'Lorem ipsum, odit eaque, optio voluptatibus consequatur totam, nostrum corporis rerum.', important:true},
-        {id: uuid(), title:'tarea 2', desc:'kwegio efknew ogpqngwrhnrwh', important:false},
-        {id: uuid(), title:'tarea 3', desc:'kwegquofbwqoiyffqbwe egvsegweegrwh', important:true},
-        {id: uuid(), title:'tarea 4', desc:'kwegyf jfbkse efkjwef ewfjkb fheof wefj wefewj f ewfj fkwe fje f fqbwe egvsegweegrwh', important:true},
-        {id: uuid(), title:'tarea 5', desc:'gvsgfqbwe eegweegrwh', important:false}
     ]);
+
+    const deleteTask=(id) => {
+        console.log('eliminar task');
+        const deleteTaskList=[...taskList];
+        const delTask=deleteTaskList.map(d => d.id).indexOf(id);
+        console.log(delTask);
+        deleteTaskList.splice(delTask,1);
+        setTaskList(deleteTaskList)
+
+        console.log('se elimino task');    
+    }
 
     const addTask=() => {
         console.log('boton agregar');
@@ -87,7 +93,7 @@ export const PostItSimulator=() => {
             </div>
             <div className='d-flex flex-wrap justify-content-evenly mt-5'>
                 {
-                    taskList.map(task => <Task task={task} key={task.id}/>)
+                    taskList.map(task => <Task task={task} deleteTask={deleteTask} key={task.id}/>)
                 }
             </div>
         </div>

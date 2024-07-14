@@ -28,6 +28,9 @@ body{
     background-color: #ec7063;
     
 }
+h3 strong{
+    max-width: 2%;
+}
 p{
     line-height: 2;
     font-size: large;

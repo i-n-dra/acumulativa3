@@ -1,15 +1,17 @@
-export function Task({task}) {
+export function Task({task, deleteTask}) {
     const {id,title,desc,important}=task;
+
+    const btnDelete=()=> deleteTask(id)
 
     if (important){
         return (
             <div className="iTask m-3 p-3">
                 <div className="flex-column">
-                    <h3><strong>{title}</strong></h3>
+                    <h3 className="w-75"><strong>{title}</strong></h3>
                     <p>{desc}</p>
                 </div>
                 <div>
-                    <button className="btn-close"></button>
+                    <button className="btn-close" onClick={btnDelete}></button>
                 </div>
             </div>
         )
@@ -17,12 +19,12 @@ export function Task({task}) {
     else {
         return (
         <div className="niTask m-3 p-3">
-            <div className="flex-column">
-                <h3><strong>{title}</strong></h3>
+            <div className="flex-column w-75">
+                <h3 className="w-75"><strong>{title}</strong></h3>
                 <p>{desc}</p>
             </div>
             <div>
-                <button className="btn-close"></button>
+                <button className="btn-close" onClick={btnDelete}></button>
             </div>
         </div>
         )
