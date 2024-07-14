@@ -12,3 +12,23 @@ body{
     background-color: #111;
     color: white;
 }
+.niTask{
+    display: inline-flex;
+    justify-content: space-between;
+    width: 20%;
+    height: 10%;
+    height: 15rem;
+    background-color: #ffffcc;    
+}
+.iTask{
+    display: inline-flex;
+    justify-content: space-between;
+    width: 20%;
+    height: 15rem;
+    background-color: #ec7063;
+    
+}
+p{
+    line-height: 2;
+    font-size: large;
+}
